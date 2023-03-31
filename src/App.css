@@ -1,0 +1,14 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box; 
+}
+html, body{
+    font-size: 18px;
+    font-family: Lato, sans-serif;
+}
+
+.body-style{
+    background-color: aquamarine;
+    color: cadetblue;
+}
