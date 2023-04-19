@@ -1,11 +1,11 @@
 import React from 'react'
-import Nav from './components/nav/Nav'
+import NavBar from './components/NavBar.jsx'
 import './App.css'
 
 export default function App () {
   return (
     <div>
-      <Nav />
+      <NavBar />
       <div className='body-style'>
         Hola Mundo.
       </div>
