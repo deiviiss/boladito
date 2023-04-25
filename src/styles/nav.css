@@ -1,8 +1,8 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  background-color: #432b9b;
-  padding: 5px;
+  background-color: #6343AE;
+  padding: 20px 25px 20px 25px;
 }
 
 .nav__logo {
