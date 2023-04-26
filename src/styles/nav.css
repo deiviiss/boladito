@@ -1,0 +1,48 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #6343AE;
+  padding: 20px 25px 20px 25px;
+}
+
+.nav__logo {
+  cursor: pointer;
+}
+
+.nav__logo img {
+  height: 1.5em;
+  min-height: 35px;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+}
+
+.nav__item {
+  height: 1.5em;
+  min-height: 35px;
+  padding-left: 7px;
+  cursor: pointer;
+}
+
+.nav__item img {
+  height: 1.5em;
+  min-height: 35px;
+  padding-left: 7px;
+}
+
+
+.nav__link--search {
+  height: 1.5em;
+  min-height: 35px;
+  width: 250px;
+  border-radius: 20px;
+  padding: 0px 5px;
+}
+
+@media only screen and (min-width: 300px) {
+  .nav__link--search {
+    width: 100%;
+  }
+}
