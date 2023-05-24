@@ -7,43 +7,44 @@ import '../styles/nav.css'
 
 export default function NavBar () {
   return (
-    <nav className='nav'>
+    <nav className='flex flex-col'>
 
-      <div className='nav__logo'>
-        <img className='nav__logo--boladito' src={ logoImage } alt="logo" />
+      <div className="flex justify-between h-[42px] p-2">
+        <div className='w-[140px]'>
+          <img src={ logoImage } alt="logo" className=''/>
+        </div>
+
+        <ul className='flex gap-1'>
+          <li>
+            <img
+                className='h-[26px]'
+                src={ iconSearch }
+                alt="icono de buscar"
+          />
+          </li>
+
+          <li>
+            <img
+                className='h-[26px]'
+                src={ iconUser }
+                alt="icono de usuario"
+          />
+          </li>
+
+          <li>
+            <img
+                className='h-[26px]'
+                src={ iconShopping }
+                alt="icono de carrito"
+          />
+          </li>
+        </ul>
       </div>
 
-      <ul className='nav__list'>
-        <li className='nav__item'>
-            <form>
-              <input type="search" name='' id='' className='nav__link--search'/>
-            </form>
-        </li>
+      <form className='flex justify-center items-center h-[42px] bg-secondary'>
+        <input type="search" name='' id='' className='min-w-[350px] h-[27px] rounded-lg'/>
+      </form>
 
-        <li className='nav__item'>
-          <img
-            className='nav__link'
-            src={ iconSearch }
-            alt="icono de buscar"
-          />
-        </li>
-
-        <li className='nav__item'>
-          <img
-            className='nav__link'
-            src={ iconUser }
-            alt="icono de usuario"
-          />
-        </li>
-
-        <li className='nav__item'>
-          <img
-            className='nav__link'
-            src={ iconShopping }
-            alt="icono de carrito"
-          />
-        </li>
-      </ul>
     </nav>
   )
 }

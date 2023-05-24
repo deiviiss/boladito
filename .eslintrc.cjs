@@ -17,6 +17,8 @@ module.exports = {
     'react'
   ],
   rules: {
-    'react/react-in-jsx-scope': 'off'
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-indent': ['error', 2], // Indentación de 2 espacios para elementos JSX
+    'react/jsx-indent-props': ['error', 4] // Indentación de 4 espacios para props en JSX
   }
 }
