@@ -1,23 +1,19 @@
-import React from 'react'
-import './App.css'
-
-//! Create folder Layout and move next code to a MainLayout
-import NavBar from './components/NavBar.jsx'
-import Carousel from './components/Carousel.jsx'
-import { slides } from './utils/slides.js'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar.jsx'
+import HomePage from './pages/HomePage'
+import ProfilePage from './pages/ProfilePage.jsx'
 
 export default function App () {
   return (
     <>
-      <NavBar />
-        <Carousel autoSlide={ false } autoSlideinterval={4000}>
-        {[
-          ...slides.map((slide) => (
-            <image key={slide.id} src={slide.url} alt={slide.url} />
-            // <img key={slide.id} src={slide.url} alt={slide.url} />
-          ))
-        ]}
-      </Carousel>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route element={<HomePage />} path="/" />
+          <Route element={<ProfilePage />} path="/profile" />
+        </Routes>
+      </BrowserRouter>
+
     </>
   )
 }

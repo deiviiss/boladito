@@ -1,7 +1,8 @@
-import iconUser from '../assets/icons/USER.svg'
-import iconShopping from '../assets/icons/CARRITO.svg'
+import { NavLink } from 'react-router-dom'
 import iconSearch from '../assets/icons/BUSCAR.svg'
+import iconShopping from '../assets/icons/CARRITO.svg'
 import logoImage from '../assets/icons/LOGO.svg'
+import iconUser from '../assets/icons/USER.svg'
 
 import '../styles/nav.css'
 
@@ -10,9 +11,9 @@ export default function NavBar () {
     <nav className='flex flex-col'>
 
       <div className="flex justify-between h-[42px] p-2">
-        <div className='w-[140px]'>
+        <NavLink to={'/'} className='w-[140px]'>
           <img src={ logoImage } alt="logo" className=''/>
-        </div>
+        </NavLink>
 
         <ul className='flex gap-1'>
           <li>
@@ -24,11 +25,13 @@ export default function NavBar () {
           </li>
 
           <li>
-            <img
-                className='h-[26px]'
-                src={ iconUser }
-                alt="icono de usuario"
+            <NavLink to="/profile">
+              <img
+                  className='h-[26px]'
+                  src={ iconUser }
+                  alt="icono de usuario"
           />
+            </NavLink>
           </li>
 
           <li>

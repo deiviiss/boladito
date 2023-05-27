@@ -1,14 +1,14 @@
 export const slides = [
   {
     id: 1,
-    url: 'https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    url: 'https://www.ionos.mx/digitalguide/fileadmin/_processed_/2/3/csm_e-commerce_2bc935bf49.webp'
   },
   {
     id: 2,
-    url: 'src/assets/slides/slide-demo.png'
+    url: 'https://cio.com.mx/wp-content/uploads/2021/08/ultima-milla-ecommerce.jpg'
   },
   {
     id: 3,
-    url: 'src/assets/slides/slide-demo.png'
+    url: 'https://d1ih8jugeo2m5m.cloudfront.net/2022/07/el-ecommerce-que-es.jpg'
   }
 ]
