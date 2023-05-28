@@ -13,7 +13,7 @@ module.exports = {
         quaternary: '#2B726E'
       },
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif']
+        exo: ['Exo2', 'sans-serif']
       },
       textColor: {
         primary: '#5B45AA',

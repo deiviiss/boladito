@@ -1,36 +1,51 @@
 import styled from 'styled-components'
 import Carousel from '../components/Carousel.jsx'
 import Product from '../components/Product.jsx'
+import ProductsActiveLayout from '../layout/ProductsActiveLayout.jsx'
 import { slides } from '../utils/slides.js'
+
 const SlideImage = styled.img` 
 `
 
+//! fake data
 const products = [
   {
     product_id: 1,
-    name: 'Smartphone X-Plus',
-    url: 'https://assets.sams.com.mx/image/upload/f_auto,q_auto:eco,w_350,c_scale,dpr_auto/mx/images/product-images/img_medium/981001211m.jpg',
-    description: 'Un dispositivo potente y elegante para todas tus necesidades.'
+    name: 'Xtreme PC GeForce',
+    url: 'https://http2.mlstatic.com/D_NQ_NP_941710-MLM51863601032_102022-O.webp',
+    description: 'Rtx 2060 13Gb I5 16 Gb 500Gb Monitor 144hz',
+    like: false,
+    price: 100,
+    rifaDate: new Date('2023-06-01')
   },
   {
     product_id: 2,
-    name: 'Auriculares inalámbricos Z-Tech',
-    url: 'https://globaloffice.com.mx/img/CT/93385451-3807309260.jpg',
-    description: 'Sumérgete en un sonido envolvente sin cables ni limitaciones.'
+    name: 'Teclado gamer Game Factor',
+    url: 'https://m.media-amazon.com/images/I/61JhIy5rXLL.__AC_SX300_SY300_QL70_ML2_.jpg',
+    description: 'KBG400 QUERTY KRED Blue español España color negro',
+    like: true,
+    price: 10,
+    rifaDate: new Date('2023-09-02')
+  },
+  {
+    product_id: 3,
+    name: 'Audifonos gamer',
+    url: 'https://www.cyberpuerta.mx/img/product/XL/CP-CORSAIR-CA-9011215-NA-1.jpg',
+    description: 'Corsair HS50 carbon',
+    like: false,
+    price: 10,
+    rifaDate: new Date('2023-11-03')
+  },
+  {
+    product_id: 4,
+    name: 'Monitor Gamer Samsung Odyssey',
+    url: 'https://www.cyberpuerta.mx/img/product/XL/CP-SAMSUNG-LS24AG320NLXZX-9dbcda.jpg',
+    description: 'G3 F24G35TLCD 24" negro 100V/240V',
+    like: false,
+    price: 30,
+    rifaDate: new Date('2024-05-15')
   }
 ]
-
-const ProductsActive = () => {
-  return (
-    <>
-      <div className="grid grid-cols-2 mt-[10px] gap-[10px] mr-[7.5px] ml-[7.5px]">
-        {products.map((product) => (
-          <Product key={product.product_id} product={product}/>
-        ))}
-      </div>
-    </>
-  )
-}
 
 export default function HomePage () {
   return (
@@ -44,8 +59,11 @@ export default function HomePage () {
         ]}
       </Carousel>
 
-      <ProductsActive></ProductsActive>
-
+      <ProductsActiveLayout>
+        {products.map((product) => (
+          <Product key={product.product_id} product={product}/>
+        ))}
+      </ProductsActiveLayout>
     </>
   )
 }

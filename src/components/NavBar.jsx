@@ -8,7 +8,7 @@ import '../styles/nav.css'
 
 export default function NavBar () {
   return (
-    <nav className='flex flex-col'>
+    <nav className='flex flex-col bg-primary'>
 
       <div className="flex justify-between h-[42px] p-2">
         <NavLink to={'/'} className='w-[140px]'>
