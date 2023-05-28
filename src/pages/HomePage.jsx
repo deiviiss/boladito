@@ -1,11 +1,7 @@
-import styled from 'styled-components'
 import Carousel from '../components/Carousel.jsx'
 import Product from '../components/Product.jsx'
 import ProductsActiveLayout from '../layout/ProductsActiveLayout.jsx'
 import { slides } from '../utils/slides.js'
-
-const SlideImage = styled.img` 
-`
 
 //! fake data
 const products = [
@@ -53,8 +49,7 @@ export default function HomePage () {
       <Carousel autoSlide={ true } autoSlideinterval={4000}>
         {[
           ...slides.map((slide) => (
-            <SlideImage className='w-full min-w-full h-[150px] object-cover'key={slide.id} src={slide.url} alt={slide.url} />
-            // <img key={slide.id} src={slide.url} alt={slide.url} />
+            <img className='w-full min-w-full h-[150px] object-cover'key={slide.id} src={slide.url} alt={slide.url} />
           ))
         ]}
       </Carousel>
