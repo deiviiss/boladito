@@ -13,11 +13,17 @@ jobs:
       - name: Install pnpm 🔧
         shell: bash
         run: npm install -g pnpm
-      - name: Install dependencies pnpm
+        
+      - name: Install dependencies pnpm 🔧
         shell: bash
         run: pnpm install --no-frozen-lockfile
       
+      - name: List files in directory 🔧
+        shell: bash  
+        run: ls -R
+
       - name: Build 🔧
+        shell: bash  
         run:
           npm run build
 
