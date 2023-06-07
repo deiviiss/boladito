@@ -1,0 +1,28 @@
+name: Build and Deploy
+on: [push]
+permissions:
+  contents: write
+jobs:
+  build-and-deploy:
+    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+     
+      - name: Install pnpm 🔧
+        shell: bash
+        run: npm install -g pnpm
+      - name: Install dependencies pnpm
+        shell: bash
+        run: pnpm install --no-frozen-lockfile
+      
+      - name: Build 🔧
+        run:
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist # The folder the action should deploy.
