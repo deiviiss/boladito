@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar.jsx'
+import Navbar from './components/Navbar'
 import HomePage from './pages/HomePage'
-import ProfilePage from './pages/ProfilePage.jsx'
+import ProfilePage from './pages/ProfilePage'
 
 export default function App () {
   return (
