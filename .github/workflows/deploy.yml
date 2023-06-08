@@ -18,7 +18,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -32,9 +35,9 @@ jobs:
         shell: bash
         run: pnpm install --no-frozen-lockfile
       
-      - name: List files in directory 🔧
-        shell: bash
-        run: ls -R
+      #- name: List files in directory 🔧
+        #shell: bash
+        #run: ls -R
 
       - name: Build 🔧
         shell: bash
