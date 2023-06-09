@@ -16,7 +16,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint-init": "eslint --init",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "prop-types": "^15.8.1",
@@ -36,6 +37,7 @@
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2",
     "vite": "^4.2.2"
