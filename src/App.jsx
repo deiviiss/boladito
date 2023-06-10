@@ -10,7 +10,7 @@ export default function App () {
         <Navbar />
         <Routes>
           <Route element={<HomePage />} path="/" />
-          <Route element={<ProfilePage />} path="/profile" />
+          <Route element={<ProfilePage />} path="/profile/*" />
         </Routes>
       </BrowserRouter>
 
