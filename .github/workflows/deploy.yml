@@ -1,5 +1,5 @@
 name: Build and Deploy
-on: 
+on:
   # Runs on pushes targeting the default branch
   push:
     branches: ['main']
@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-     
+
       - name: Install pnpm 🔧
         shell: bash
         run: npm install -g pnpm
@@ -34,10 +34,10 @@ jobs:
       - name: Install dependencies pnpm 🔧
         shell: bash
         run: pnpm install --no-frozen-lockfile
-      
-      - name: List files in directory 🔧
-        shell: bash
-        run: ls -R
+
+      # - name: List files in directory 🔧
+      #   shell: bash
+      #   run: ls -R
 
       - name: Build 🔧
         shell: bash
