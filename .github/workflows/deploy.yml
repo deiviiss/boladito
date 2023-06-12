@@ -19,14 +19,23 @@ concurrency:
 
 jobs:
   build-deploy:
+
     environment:
       name: github-pages
-      # url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
-
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      
       - name: Install pnpm 🔧
         shell: bash
         run: npm install -g pnpm
@@ -46,11 +55,13 @@ jobs:
 
       - name: Setup Pages 🚀
         uses: actions/configure-pages@v3
+
       - name: Upload artifact 🚀
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload dist repository
           path: './dist'
+
       - name: Deploy to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v1
