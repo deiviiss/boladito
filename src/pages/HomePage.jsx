@@ -1,4 +1,5 @@
 import Carousel from '../components/Carousel.jsx'
+import Footer from '../components/Footer.jsx'
 import Product from '../components/Product.jsx'
 import ProductsActiveLayout from '../layout/ProductsActiveLayout.jsx'
 import { slides } from '../utils/slides.js'
@@ -59,6 +60,8 @@ export default function HomePage () {
           <Product key={product.product_id} product={product}/>
         ))}
       </ProductsActiveLayout>
+
+      <Footer />
     </>
   )
 }

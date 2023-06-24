@@ -5,9 +5,9 @@ import '../style/nav.css'
 export default function ButtonSearch () {
   return (
     <img
-      className='ButtonSearch ButtonNav'
-      src={ iconoSearch }
-      alt="icono de search"
+        className='ButtonSearch ButtonNav'
+        src={ iconoSearch }
+        alt="icono de search"
     />
   )
 }
