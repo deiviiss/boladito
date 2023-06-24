@@ -4,11 +4,9 @@ import iconShopping from '../assets/icons/CARRITO.svg'
 import logoImage from '../assets/icons/LOGO.svg'
 import iconUser from '../assets/icons/USER.svg'
 
-import '../styles/nav.css'
-
 export default function NavBar () {
   return (
-    <nav className='flex flex-col bg-primary'>
+    <nav className='flex flex-col bg-primary sticky top-0 z-10'>
 
       <div className="flex justify-between h-[42px] p-2">
         <NavLink to={'/'} className='w-[140px]'>
@@ -43,10 +41,6 @@ export default function NavBar () {
           </li>
         </ul>
       </div>
-
-      <form className='flex justify-center items-center h-[42px] bg-secondary'>
-        <input type="search" name='' id='' className='min-w-[350px] h-[27px] rounded-lg'/>
-      </form>
 
     </nav>
   )
