@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const Footer = () => {
   return (
     <>
-      <div className='flex flex-col justify-center items-center bg-primary p-2 text-xs text-white'>
+      {/* <div className='flex flex-col justify-center items-center bg-primary p-2 text-xs text-white'>
         <h1 className=''>Mapa del sitio</h1>
 
         <div className=" grid grid-cols-2">
@@ -114,7 +114,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <footer className="flex justify-center items-center text-[9px] text-white gap-3 p-5 bg-primary shadow-[0_-3px_5px_0px_rgba(0,0,0,0.3)]">
         <NavLink to={'/'}>Terminos y condiciones</NavLink>

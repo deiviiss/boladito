@@ -33,11 +33,13 @@ export default function NavBar () {
           </li>
 
           <li>
-            <img
-                className='h-[26px]'
-                src={ iconShopping }
-                alt="icono de carrito"
-          />
+            <NavLink to={'/checkout'}>
+              <img
+                  className='h-[26px]'
+                  src={iconShopping}
+                  alt="icono de carrito"
+              />
+            </NavLink>
           </li>
         </ul>
       </div>
