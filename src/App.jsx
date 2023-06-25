@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import { ProviderProducts } from './context/productContext'
 import CheckoutPage from './pages/CheckoutPage'
@@ -15,6 +16,7 @@ export default function App () {
           <Route element={<ProfilePage />} path="/profile/*" />
           <Route element={<CheckoutPage />} path="/checkout/*" />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </ProviderProducts>
   )

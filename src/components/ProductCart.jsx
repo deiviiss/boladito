@@ -32,9 +32,11 @@ export default function ProductCart ({ product }) {
             <p>$  {product.total}</p>
           </div>
 
-          <button onClick={() => handleClick(product)} className='rounded-full bg-[#00402F] w-5 h-5 border-2 border-[#00BF8E] text-white ' >
-            +
-          </button>
+          <div className='flex items-center justify-center rounded-full bg-[#00402F] w-5 h-5 border-2 border-[#00BF8E] text-white text-xl text-center'>
+            <button onClick={() => handleClick(product)}>
+              +
+            </button>
+          </div>
         </div>
 
       </div>

@@ -1,5 +1,4 @@
 import Carousel from '../components/Carousel.jsx'
-import Footer from '../components/Footer.jsx'
 import Product from '../components/Product.jsx'
 import { useProducts } from '../context/productContext.jsx'
 import ProductsActiveLayout from '../layout/ProductsActiveLayout.jsx'
@@ -10,9 +9,9 @@ export default function HomePage () {
 
   return (
     <>
-      <form className='flex justify-center items-center h-[42px] bg-secondary'>
+      {/* <form className='flex justify-center items-center h-[42px] bg-secondary'>
         <input type="search" name='' id='' className='min-w-[350px] h-[27px] rounded-lg' />
-      </form>
+      </form> */}
 
       <Carousel autoSlide={ true } autoSlideinterval={4000}>
         {[
@@ -28,7 +27,6 @@ export default function HomePage () {
         ))}
       </ProductsActiveLayout>
 
-      <Footer />
     </>
   )
 }

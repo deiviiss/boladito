@@ -35,9 +35,11 @@ export default function Product ({ product }) {
           {product.like ? <img src={ iconLike } alt="like" className='w-[20px]' /> : <img src={ iconNoLike } alt="no like" className='w-[20px]' /> }
         </button> */}
 
-        <button onClick={() => handleClick(product)} className='rounded-full bg-[#00402F] w-5 h-5 border-2 border-[#00BF8E] text-white ' >
-          +
-        </button>
+        <div className='flex items-center justify-center rounded-full bg-[#00402F] w-5 h-5 border-2 border-[#00BF8E] text-white text-xl text-center'>
+          <button onClick={() => handleClick(product)}>
+            +
+          </button>
+        </div>
 
       </div>
     </div>
