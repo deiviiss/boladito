@@ -1,9 +1,16 @@
 import PropTypes from 'prop-types'
 import TimeRifa from './TimeRifa'
-import iconLike from '../assets/icons/LIKE.svg'
-import iconNoLike from '../assets/icons/NOLIKE.svg'
+import { useProducts } from '../context/productContext'
+// import iconLike from '../assets/icons/LIKE.svg'
+// import iconNoLike from '../assets/icons/NOLIKE.svg'
 
 export default function Product ({ product }) {
+  const { addProductCart } = useProducts()
+
+  const handleClick = (product) => {
+    addProductCart(product)
+  }
+
   return (
     <div className="w-[175px] h-[158px] bg-white p-[7px] text-[7px] flex flex-col justify-between border-2  overflow-hidden relative rounded-tl-2xl rounded-tr-none rounded-br-2xl shadow-md mx-auto">
 
@@ -24,9 +31,16 @@ export default function Product ({ product }) {
           <p>{product.description}</p>
         </div>
 
-        <button>
+        {/* <button>
           {product.like ? <img src={ iconLike } alt="like" className='w-[20px]' /> : <img src={ iconNoLike } alt="no like" className='w-[20px]' /> }
-        </button>
+        </button> */}
+
+        <div className='flex items-center justify-center rounded-full bg-[#00402F] w-5 h-5 border-2 border-[#00BF8E] text-white text-xl text-center'>
+          <button onClick={() => handleClick(product)}>
+            +
+          </button>
+        </div>
+
       </div>
     </div>
   )

@@ -3,8 +3,10 @@ import iconSearch from '../assets/icons/BUSCAR.svg'
 import iconShopping from '../assets/icons/CARRITO.svg'
 import logoImage from '../assets/icons/LOGO.svg'
 import iconUser from '../assets/icons/USER.svg'
+import { useProducts } from '../context/productContext'
 
 export default function NavBar () {
+  const { cartProducts } = useProducts()
   return (
     <nav className='flex flex-col bg-primary sticky top-0 z-10'>
 
@@ -33,11 +35,14 @@ export default function NavBar () {
           </li>
 
           <li>
-            <img
-                className='h-[26px]'
-                src={ iconShopping }
-                alt="icono de carrito"
-          />
+            <NavLink to={'/checkout'}>
+              <img
+                  className='h-[26px]'
+                  src={iconShopping}
+                  alt="icono de carrito"
+              />
+              {cartProducts.length > 0 ? <div className='absolute right-1 top-1 w-4 h-4 text-[9px] text-center bg-[#D7E34B] rounded-full p-[2px]'>{cartProducts.length}</div> : null}
+            </NavLink>
           </li>
         </ul>
       </div>
