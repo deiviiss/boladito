@@ -44,5 +44,5 @@ export default function ProductCart ({ product }) {
   )
 }
 ProductCart.propTypes = {
-  product: PropTypes.object
+  product: PropTypes.node
 }
