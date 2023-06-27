@@ -17,11 +17,13 @@ export default function NavBar () {
 
         <ul className='flex gap-1'>
           <li>
-            <img
-                className='h-[26px]'
-                src={ iconSearch }
-                alt="icono de buscar"
+            <NavLink to="/list-products">
+              <img
+                  className='h-[26px]'
+                  src={ iconSearch }
+                  alt="icono de buscar"
           />
+            </NavLink>
           </li>
 
           <li>

@@ -32,7 +32,7 @@ export const ProductsProvider = ({ children }) => {
 
     products && setProducts(products)
     raffles && setRaffles(raffles)
-
+  }
   const addProductCart = (product) => setCartProducts([...cartProducts, product])
 
   // productos en rifa
