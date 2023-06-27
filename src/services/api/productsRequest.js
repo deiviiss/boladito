@@ -8,7 +8,8 @@ const getProductsRequest = async () => {
       description: 'Rtx 2060 13Gb I5 16 Gb 500Gb Monitor 144hz',
       like: false,
       price: 100,
-      rifaDate: new Date('2023-06-01')
+      rifaDate: new Date('2023-06-01'),
+      category: 'pc'
     },
     {
       product_id: 2,
@@ -17,7 +18,8 @@ const getProductsRequest = async () => {
       description: 'KBG400 QUERTY KRED Blue español España color negro',
       like: true,
       price: 10,
-      rifaDate: new Date('2023-09-02')
+      rifaDate: new Date('2023-09-02'),
+      category: 'keyboards'
     },
     {
       product_id: 3,
@@ -26,7 +28,8 @@ const getProductsRequest = async () => {
       description: 'Corsair HS50 carbon',
       like: false,
       price: 10,
-      rifaDate: new Date('2023-11-03')
+      rifaDate: new Date('2023-11-03'),
+      category: 'earphones'
     },
     {
       product_id: 4,
@@ -35,7 +38,8 @@ const getProductsRequest = async () => {
       description: 'G3 F24G35TLCD 24" negro 100V/240V',
       like: false,
       price: 30,
-      rifaDate: new Date('2024-05-15')
+      rifaDate: new Date('2024-05-15'),
+      category: 'screens'
     }
   ]
 

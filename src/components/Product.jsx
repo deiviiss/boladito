@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import TimeRifa from './TimeRifa'
-import { useProducts } from '../context/productContext'
+import { useProducts } from '../context/productsContext'
 // import iconLike from '../assets/icons/LIKE.svg'
 // import iconNoLike from '../assets/icons/NOLIKE.svg'
 

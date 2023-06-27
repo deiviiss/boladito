@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import TimeRifa from './TimeRifa'
-import { useProducts } from '../context/productContext'
+import { useProducts } from '../context/productsContext'
 
 export default function ProductCart ({ product }) {
   const { addProductCart } = useProducts()
