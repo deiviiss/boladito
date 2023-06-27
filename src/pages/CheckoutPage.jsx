@@ -1,4 +1,3 @@
-import React from 'react'
 import ProductCart from '../components/ProductCart'
 import { useProducts } from '../context/productsContext'
 

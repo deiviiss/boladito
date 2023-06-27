@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import ButtonAddTicket from './ButtonAddTicket'
 import TimeRifa from './TimeRifa'
 import { useProducts } from '../context/productsContext'
 
@@ -32,11 +33,7 @@ export default function ProductCart ({ product }) {
             <p>$  {product.total}</p>
           </div>
 
-          <div className='flex items-center justify-center rounded-full bg-[#00402F] w-5 h-5 border-2 border-[#00BF8E] text-white text-xl text-center'>
-            <button onClick={() => handleClick(product)}>
-              +
-            </button>
-          </div>
+          <ButtonAddTicket handleClick={handleClick} product={product} />
         </div>
 
       </div>
@@ -44,5 +41,5 @@ export default function ProductCart ({ product }) {
   )
 }
 ProductCart.propTypes = {
-  product: PropTypes.node
+  product: PropTypes.object
 }
