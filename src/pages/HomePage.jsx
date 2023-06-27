@@ -1,6 +1,6 @@
 import Carousel from '../components/Carousel.jsx'
 import Product from '../components/Product.jsx'
-import { useProducts } from '../context/productContext.jsx'
+import { useProducts } from '../context/productsContext.jsx'
 import ProductsActiveLayout from '../layout/ProductsActiveLayout.jsx'
 import { slides } from '../utils/slides.js'
 

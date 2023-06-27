@@ -3,7 +3,7 @@ import iconSearch from '../assets/icons/BUSCAR.svg'
 import iconShopping from '../assets/icons/CARRITO.svg'
 import logoImage from '../assets/icons/LOGO.svg'
 import iconUser from '../assets/icons/USER.svg'
-import { useProducts } from '../context/productContext'
+import { useProducts } from '../context/productsContext'
 
 export default function NavBar () {
   const { cartProducts } = useProducts()

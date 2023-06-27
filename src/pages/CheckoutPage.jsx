@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductCart from '../components/ProductCart'
-import { useProducts } from '../context/productContext'
+import { useProducts } from '../context/productsContext'
 
 const CheckoutPage = () => {
   const { cartProducts } = useProducts()

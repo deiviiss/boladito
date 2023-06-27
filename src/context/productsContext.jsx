@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { useState, createContext, useContext, useEffect } from 'react'
 
 import { getProductsRequest } from '../services/api/productsRequest'
+import { getRafflesRequest } from '../services/api/rafflesRequest'
 
 const ProductsContext = createContext()
 
@@ -9,28 +10,28 @@ export const useProducts = () => {
   const context = useContext(ProductsContext)
 
   if (!context) {
-    throw new Error('useProducts debe ser utilizado dentro de un ProviderProducts')
+    throw new Error('useProducts debe ser utilizado dentro de un ProductsProvider')
   }
 
   return context
 }
 
-export const ProviderProducts = ({ children }) => {
+export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([])
   const [cartProducts, setCartProducts] = useState([])
+  const [raffles, setRaffles] = useState([])
 
   useEffect(() => {
-    getProducts()
+    getInitData()
   }, [])
 
   // should be private
-  const getProducts = async () => {
+  const getInitData = async () => {
     const products = await getProductsRequest()
+    const raffles = await getRafflesRequest()
 
-    if (products) {
-      setProducts(products)
-    }
-  }
+    products && setProducts(products)
+    raffles && setRaffles(raffles)
 
   const addProductCart = (product) => setCartProducts([...cartProducts, product])
 
@@ -43,13 +44,14 @@ export const ProviderProducts = ({ children }) => {
       rifaProducts,
       cartProducts,
       setCartProducts,
-      addProductCart
+      addProductCart,
+      products
     }}>
       {children}
     </ProductsContext.Provider>
   )
 }
 
-ProviderProducts.propTypes = {
+ProductsProvider.propTypes = {
   children: PropTypes.node.isRequired
 }
