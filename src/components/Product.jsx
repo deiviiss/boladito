@@ -3,11 +3,13 @@ import ButtonAddTicket from './ButtonAddTicket'
 import TimeRifa from './TimeRifa'
 import { useProducts } from '../context/productsContext'
 
-export default function Product ({ product }) {
-  const { addProductCart } = useProducts()
-
+export default function Product ({ product, raffleAt = new Date() }) {
+  const { addTicketCart } = useProducts()
+  console.log(raffleAt)
+  // ? se exhiben productos, se venden boletos.
   const handleClick = (product) => {
-    addProductCart(product)
+    // debería de consultar la api para saber cuantos boletos quedan, ya tengo la raffle a la cual corresponde tal producto. ahora se tiene que checar disponibilidad
+    addTicketCart(product)
   }
 
   return (
@@ -18,7 +20,7 @@ export default function Product ({ product }) {
         <p className='text-[10px'>Por boleto</p>
       </div>
 
-      <TimeRifa rifaDate={product.rifaDate} ></TimeRifa>
+      <TimeRifa rifaDate={raffleAt} ></TimeRifa>
 
       <div className="flex justify-center">
         <img className='w-[100px] h-[58px] object-cover' src={product.url} alt="product" />
@@ -37,5 +39,6 @@ export default function Product ({ product }) {
   )
 }
 Product.propTypes = {
-  product: PropTypes.object
+  product: PropTypes.object,
+  raffleAt: PropTypes.instanceOf(Date)
 }

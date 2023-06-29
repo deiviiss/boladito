@@ -5,7 +5,7 @@ import ProductsActiveLayout from '../layout/ProductsActiveLayout.jsx'
 import { slides } from '../utils/slides.js'
 
 export default function HomePage () {
-  const { rifaProducts } = useProducts()
+  const { raffles } = useProducts()
 
   return (
     <>
@@ -22,9 +22,9 @@ export default function HomePage () {
       </Carousel>
 
       <ProductsActiveLayout>
-        {rifaProducts.map((product) => (
-          <Product key={product.product_id} product={product}/>
-        ))}
+        {raffles.map((raffle) => {
+          return <Product key={raffle.product.productId} product={raffle.product} raffleAt={raffle.raffleAt}/>
+        })}
       </ProductsActiveLayout>
 
     </>

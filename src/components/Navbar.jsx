@@ -6,7 +6,7 @@ import iconUser from '../assets/icons/USER.svg'
 import { useProducts } from '../context/productsContext'
 
 export default function NavBar () {
-  const { cartProducts } = useProducts()
+  const { cartTickets } = useProducts()
   return (
     <nav className='flex flex-col bg-primary sticky top-0 z-10'>
 
@@ -43,7 +43,7 @@ export default function NavBar () {
                   src={iconShopping}
                   alt="icono de carrito"
               />
-              {cartProducts.length > 0 ? <div className='absolute right-1 top-1 w-4 h-4 text-[9px] text-center bg-[#D7E34B] rounded-full p-[2px]'>{cartProducts.length}</div> : null}
+              {cartTickets.length > 0 ? <div className='absolute right-1 top-1 w-4 h-4 text-[9px] text-center bg-[#D7E34B] rounded-full p-[2px]'>{cartTickets.length}</div> : null}
             </NavLink>
           </li>
         </ul>

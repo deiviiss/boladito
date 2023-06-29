@@ -9,7 +9,9 @@ const getProductsRequest = async () => {
       like: false,
       price: 100,
       rifaDate: new Date('2023-06-01'),
-      category: 'pc'
+      category: 'pc',
+      quantity: 4,
+      total: 60
     },
     {
       product_id: 2,

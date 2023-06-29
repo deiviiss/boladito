@@ -16,7 +16,7 @@ export const ProductsPage = () => {
       <ProductsListLayout>
         {
           filteredProducts.map((product, index) => (
-            <Product key={index} product={product} />
+            <Product key={index} product={product}/>
           ))
         }
       </ProductsListLayout>
