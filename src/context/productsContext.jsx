@@ -18,7 +18,7 @@ export const useProducts = () => {
 
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([])
-  const [cartProducts, setCartProducts] = useState([])
+  const [cartTickets, setCartTickets] = useState([])
   const [raffles, setRaffles] = useState([])
 
   useEffect(() => {
@@ -32,20 +32,32 @@ export const ProductsProvider = ({ children }) => {
 
     products && setProducts(products)
     raffles && setRaffles(raffles)
+  }
 
-  const addProductCart = (product) => setCartProducts([...cartProducts, product])
+  const addTicketCart = (ticket) => setCartTickets([...cartTickets, ticket])
 
-  // productos en rifa
-  //! FEATURE use filter
-  const rifaProducts = products
+  // busca las rifas en el arreglo de rifas local, considerar la posibilidad que esta busqueda sea en la api para aprovechar la disponibilidad de boletos.
+  // const findRaffleByProductId = (productId) => {
+  //   const raffle = getRaffleByProductIdRequest(productId)
+
+  //   return raffle
+  // }
+  const findRaffleByProductId = (productId) => {
+    for (const raffle of raffles) {
+      if (raffle.product.productId === parseInt(productId)) {
+        return raffle
+      }
+    }
+    return null // Si no se encuentra la rifa, se puede manejar el caso según la lógica
+  }
 
   return (
     <ProductsContext.Provider value={{
-      rifaProducts,
-      cartProducts,
-      setCartProducts,
-      addProductCart,
-      products
+      cartTickets,
+      addTicketCart,
+      products,
+      raffles,
+      findRaffleByProductId
     }}>
       {children}
     </ProductsContext.Provider>

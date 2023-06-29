@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types'
+import ButtonAddTicket from './ButtonAddTicket'
 import TimeRifa from './TimeRifa'
 import { useProducts } from '../context/productsContext'
 
-export default function ProductCart ({ product }) {
-  const { addProductCart } = useProducts()
+export default function ProductCart ({ product, raffleAt }) {
+  const { addTicketCart } = useProducts()
 
   const handleClick = (product) => {
-    addProductCart(product)
+    addTicketCart(product)
   }
 
   return (
@@ -21,7 +22,7 @@ export default function ProductCart ({ product }) {
 
         <div className="flex flex-col justify-center items-center gap-4">
           <img className='w-full h-20 object-cover' src={product.url} alt="product" />
-          <TimeRifa rifaDate={product.rifaDate} ></TimeRifa>
+          <TimeRifa rifaDate={raffleAt} ></TimeRifa>
         </div>
 
         <div className="flex flex-col gap-5">
@@ -29,14 +30,10 @@ export default function ProductCart ({ product }) {
             <h1>{product.name}</h1>
             <p>{product.description}</p>
             <h1>{product.quantity}</h1>
-            <p>$  {product.total}</p>
+            <p>$ {product.total}</p>
           </div>
 
-          <div className='flex items-center justify-center rounded-full bg-[#00402F] w-5 h-5 border-2 border-[#00BF8E] text-white text-xl text-center'>
-            <button onClick={() => handleClick(product)}>
-              +
-            </button>
-          </div>
+          <ButtonAddTicket handleClick={handleClick} product={product} />
         </div>
 
       </div>
@@ -44,5 +41,6 @@ export default function ProductCart ({ product }) {
   )
 }
 ProductCart.propTypes = {
-  product: PropTypes.node
+  product: PropTypes.object,
+  raffleAt: PropTypes.any
 }
