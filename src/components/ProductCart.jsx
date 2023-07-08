@@ -4,7 +4,7 @@ import TimeRifa from './TimeRifa'
 import ButtonClose from '../assets/icons/ButtonClose.svg'
 import iconMessenger from '../assets/icons/MESSENGER.svg'
 import RelojEnvio from '../assets/icons/RelojEnvio.svg'
-import iconTelegram from '../assets/icons/Telegram.svg'
+import iconTelegram from '../assets/icons/Telegra.svg'
 import iconWhatsApp from '../assets/icons/WhatsApp.svg'
 import { useProducts } from '../context/productsContext'
 
