@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import iconFacebook from '../assets/icons/Facebook.svg'
+import iconFacebook from '../assets/icons/Face.svg'
 import iconInstagram from '../assets/icons/Instagram.svg'
 import iconTiktok from '../assets/icons/Tiktok.svg'
 import iconTwitter from '../assets/icons/Twitter.svg'
