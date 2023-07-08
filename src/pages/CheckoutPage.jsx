@@ -26,10 +26,6 @@ const CheckoutPage = () => {
               alt="icono de carrito"
         />
           <h1>Carrito</h1></div>
-        <img
-            className='h-[30px]'
-            src={cantBoletos}
-            alt="next boletos" />
       </div>
       {
         cartTickets.map((product) => <ProductCart key={product.productId} product={product} />)
