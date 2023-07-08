@@ -5,9 +5,9 @@ const formatTimeUnit = (value) => {
 }
 
 // NOT ACCEPT MORE THAN 99 DAYS
-export default function TimeRifa ({ rifaDate }) {
+export default function TimeRifa ({ raffleDate }) {
   const currentDate = new Date()
-  const timeDifference = Math.abs(new Date(rifaDate) - currentDate)
+  const timeDifference = Math.abs(new Date(raffleDate) - currentDate)
 
   const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24))
   const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
@@ -23,10 +23,10 @@ export default function TimeRifa ({ rifaDate }) {
     <>
       {!isMoreThan99Days
         ? <div className="flex justify-end items-center text-[#0c7065]">
-          <p className='flex justify-center items-center h-[14.5px] w-[11.5px] rounded-[4.3px] bg-white text-2B726E shadow-md'>{formattedDays.charAt(0)}</p>
-          <p className='flex justify-center items-center h-[14.5px] w-[11.5px] rounded-[4.3px] bg-white text-2B726E shadow-md'>{formattedDays.charAt(1)}</p>:
-          <p className='flex justify-center items-center h-[14.5px] w-[11.5px] rounded-[4.3px] bg-white text-2B726E shadow-md'>{formattedHours.charAt(0)}</p>
-          <p className='flex justify-center items-center h-[14.5px] w-[11.5px] rounded-[4.3px] bg-white text-2B726E shadow-md'>{formattedHours.charAt(1)}</p>:
+          <p className='flex justify-center items-center h-[14.5px] w-[11.5px] rounded-[4.3px] bg-white text-quaternary shadow-md'>{formattedDays.charAt(0)}</p>
+          <p className='flex justify-center items-center h-[14.5px] w-[11.5px] rounded-[4.3px] bg-white text-quaternary shadow-md'>{formattedDays.charAt(1)}</p>:
+          <p className='flex justify-center items-center h-[14.5px] w-[11.5px] rounded-[4.3px] bg-white text-quaternary shadow-md'>{formattedHours.charAt(0)}</p>
+          <p className='flex justify-center items-center h-[14.5px] w-[11.5px] rounded-[4.3px] bg-white text-quaternary shadow-md'>{formattedHours.charAt(1)}</p>:
           <p className='flex justify-center items-center h-[14.5px] w-[11.5px] rounded-[4.3px] bg-white text-2B726E shadow-md'>{formattedMinutes.charAt(0)}</p>
           <p className='flex justify-center items-center h-[14.5px] w-[11.5px] rounded-[4.3px] bg-white text-2B726E shadow-md'>{formattedMinutes.charAt(1)}</p>
         </div>
@@ -37,5 +37,5 @@ export default function TimeRifa ({ rifaDate }) {
 }
 
 TimeRifa.propTypes = {
-  rifaDate: PropTypes.object
+  raffleDate: PropTypes.object
 }

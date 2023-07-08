@@ -2,7 +2,7 @@
 const getRafflesRequest = async () => {
   const raffles = [
     {
-      raffle_id: 1,
+      raffleId: 872312678,
       name: 'Rifa de Accesorios Gamer',
       description: 'Rifa de accesorios para gamers',
       raffleAt: new Date('2023-06-01'),
@@ -18,7 +18,7 @@ const getRafflesRequest = async () => {
       }
     },
     {
-      raffle_id: 2,
+      raffleId: 872312679,
       name: 'Rifa de PC Gamer',
       description: 'Rifa de una PC Gamer de última generación',
       raffleAt: new Date('2023-09-02'),
@@ -34,7 +34,7 @@ const getRafflesRequest = async () => {
       }
     },
     {
-      raffle_id: 3,
+      raffleId: 872312680,
       name: 'Rifa de PC Gamer',
       description: 'Rifa de una PC Gamer de última generación',
       raffleAt: new Date('2023-11-03'),
@@ -50,7 +50,7 @@ const getRafflesRequest = async () => {
       }
     },
     {
-      raffle_id: 4,
+      raffleId: 872312681,
       name: 'Rifa de PC Gamer',
       description: 'Rifa de una PC Gamer de última generación',
       raffleAt: new Date('2023-09-02'),
@@ -74,7 +74,7 @@ const getRafflesRequest = async () => {
 const getRaffleByProductIdRequest = async (productId) => {
   console.log(`Se manda al endpoint el productId: ${productId} y este me devuelve la rifa`)
   const raffle = {
-    raffle_id: 1,
+    raffleId: 872312678,
     name: 'Rifa de Accesorios Gamer',
     description: 'Rifa de accesorios para gamers',
     raffleAt: new Date('2023-06-01'),

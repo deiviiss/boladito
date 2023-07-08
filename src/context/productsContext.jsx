@@ -34,14 +34,37 @@ export const ProductsProvider = ({ children }) => {
     raffles && setRaffles(raffles)
   }
 
-  const addTicketCart = (ticket) => setCartTickets([...cartTickets, ticket])
+  const addTicketCart = (ticket) => {
+    const existingProduct = cartTickets.find((product) => product.productId === ticket.productId)
 
-  // busca las rifas en el arreglo de rifas local, considerar la posibilidad que esta busqueda sea en la api para aprovechar la disponibilidad de boletos.
-  // const findRaffleByProductId = (productId) => {
-  //   const raffle = getRaffleByProductIdRequest(productId)
+    if (existingProduct) {
+      const updatedCartTickets = cartTickets.map((product) => {
+        if (product.productId === ticket.productId) {
+          return {
+            ...product,
+            quantity: product.quantity + 1,
+            total: product.total + ticket.price
+          }
+        }
+        return product
+      })
+      setCartTickets(updatedCartTickets)
+      return
+    }
 
-  //   return raffle
-  // }
+    const newProduct = {
+      ...ticket,
+      quantity: 1,
+      total: ticket.price
+    }
+    setCartTickets([...cartTickets, newProduct])
+  }
+
+  const removeTicketFromCart = (productId) => {
+    const updatedCartTickets = cartTickets.filter((ticket) => ticket.productId !== productId)
+    setCartTickets(updatedCartTickets)
+  }
+
   const findRaffleByProductId = (productId) => {
     for (const raffle of raffles) {
       if (raffle.product.productId === parseInt(productId)) {
@@ -51,10 +74,19 @@ export const ProductsProvider = ({ children }) => {
     return null // Si no se encuentra la rifa, se puede manejar el caso según la lógica
   }
 
+  // Función para obtener el número total de boletos en el carrito
+  const getCartItemCount = () => {
+    const cartItemCount = cartTickets.reduce((total, ticket) => total + ticket.quantity, 0)
+    return cartItemCount
+  }
+
   return (
     <ProductsContext.Provider value={{
       cartTickets,
+      setCartTickets,
       addTicketCart,
+      removeTicketFromCart,
+      getCartItemCount,
       products,
       raffles,
       findRaffleByProductId
