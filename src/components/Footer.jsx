@@ -116,7 +116,7 @@ const Footer = () => {
         </div>
       </div> */}
 
-      <footer className="flex justify-center items-center w-full absolute bottom-0 text-[9px] text-white gap-3 p-5 mt-5 bg-primary shadow-[0_-3px_5px_0px_rgba(0,0,0,0.3)]">
+      <footer className="flex justify-center items-center w-full text-[9px] text-white gap-3 p-5 mt-5 bg-primary shadow-[0_-3px_5px_0px_rgba(0,0,0,0.3)]">
         <NavLink to={'/'}>Terminos y condiciones</NavLink>
         <NavLink to={'/'}>Politicas de Privacidad</NavLink>
         <NavLink to={'/'}>Ayuda</NavLink>
