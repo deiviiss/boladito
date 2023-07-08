@@ -2,10 +2,10 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import TimeRifa from './TimeRifa'
 import ButtonClose from '../assets/icons/ButtonClose.svg'
-import iconMessenger from '../assets/icons/MESSENGER.svg'
+import iconMessenger from '../assets/icons/Messenge.svg'
 import RelojEnvio from '../assets/icons/RelojEnvio.svg'
 import iconTelegram from '../assets/icons/Telegra.svg'
-import iconWhatsApp from '../assets/icons/WhatsApp.svg'
+import iconWhatsApp from '../assets/icons/WhatsAp.svg'
 import { useProducts } from '../context/productsContext'
 
 export default function ProductCart ({ product }) {
