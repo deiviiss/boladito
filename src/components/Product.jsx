@@ -14,7 +14,7 @@ export default function Product ({ product }) {
   }
 
   return (
-    <div className="w-[175px] h-[158px] bg-white p-[7px] text-[7px] flex flex-col justify-between border-2  overflow-hidden relative rounded-tl-2xl rounded-tr-none rounded-br-2xl shadow-md mx-auto">
+    <div className=" w-full bg-white p-[7px] text-[8px] flex flex-col justify-between border-2  overflow-hidden relative rounded-tl-2xl rounded-tr-none rounded-br-2xl shadow-md mx-auto">
 
       <div className=" w-full flex flex-col items-center absolute -left-16 bg-[#D7E34B] -rotate-45">
         <p className=' text-sm font-bold'>${product.price}</p>
@@ -23,18 +23,17 @@ export default function Product ({ product }) {
 
       <TimeRifa raffleDate={raffle.raffleAt} ></TimeRifa>
 
-      <div className="flex justify-center">
-        <img className='w-[100px] h-[58px] object-cover' src={product.url} alt="product" />
+      <div className="flex justify-center p-3">
+        <img className='w-[100px] object-cover' src={product.url} alt="product" />
       </div>
 
-      <div className="flex">
-        <div className="w-[150px] h-[25px]">
+      <div className="flex justify-between items-center gap-1">
+        <div className="">
           <h1>{product.name}</h1>
           <p>{product.description}</p>
         </div>
 
         <ButtonAddTicket handleClick={handleClick} product={product} />
-
       </div>
     </div>
   )

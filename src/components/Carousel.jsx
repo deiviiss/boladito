@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import { useState, useEffect } from 'react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
+import SlideButtons from '../components/SlidesButtons'
 
 const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 4000 }) => {
   const [curr, setCurr] = useState(0)
@@ -26,7 +27,7 @@ const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 400
           {slides}
         </div>
 
-        <div className=' hidden absolute inset-0 sm:flex items-center justify-between px-4 '>
+        <div className='hidden absolute inset-0 sm:flex items-center justify-between px-4 '>
           <button onClick={prev} className='px-4 py-2 bg-transparent text-white border-none cursor-pointer transition duration-200 ease-out hover:text-purple-700 absolute top-1/2 left-3 transform -translate-y-1/2'>
             <IoIosArrowBack size={24} />
           </button>
@@ -35,20 +36,10 @@ const Carousel = ({ children: slides, autoSlide = false, autoSlideInterval = 400
           </button>
         </div>
 
-        <div className='hidden absolute top-2 right-0 left-0'>
-          <div className='flex items-center justify-center gap-2'>
-            {
-            slides.map((_, i) => (
-              <button
-                  key={i} className={`
-        transition-all w-3 h-3 bg-[#432b9b] rounded-full ${curr === i ? 'p-2' : 'bg-white'}
-        `}
-                  onClick={() => setCurr(i)}
-              />
-            ))
-          }
-          </div>
+        <div className="hidden">
+          <SlideButtons slides={slides} curr={curr} setCurr={setCurr} />
         </div>
+
       </div>
     </>
   )
