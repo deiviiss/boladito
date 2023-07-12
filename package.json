@@ -20,6 +20,7 @@
     "lint:fix": "eslint src/** --fix --ignore-pattern src/styles/ --ignore-pattern src/assets/**"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

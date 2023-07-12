@@ -6,32 +6,21 @@ import iconMessenger from '../assets/icons/Messenger.svg'
 import RelojEnvio from '../assets/icons/RelojEnvio.svg'
 import iconTelegram from '../assets/icons/Telegram.svg'
 import iconWhatsApp from '../assets/icons/WhatsApp.svg'
+import SelectQuantity from '../common/SelectQuantity'
 import { useProducts } from '../context/productsContext'
 
 export default function ProductCart ({ product }) {
-  const { findRaffleByProductId, cartTickets, setCartTickets, removeTicketFromCart } = useProducts()
+  const { findRaffleByProductId, removeTicketFromCart } = useProducts()
+
+  const options = [
+    { value: '1', label: '1' },
+    { value: '2', label: '2' },
+    { value: '3', label: '3' }
+  ]
 
   const raffle = findRaffleByProductId(product.productId)
 
   const remainingTickets = raffle.remainingTickets - product.quantity
-
-  const handleQuantitySelectedChange = event => {
-    const newQuantity = parseInt(event.target.value)
-
-    const updatedProduct = {
-      ...product,
-      quantity: newQuantity
-    }
-
-    const updatedCartTickets = cartTickets.map(ticket => {
-      if (ticket.productId === product.productId) {
-        return updatedProduct
-      }
-      return ticket
-    })
-
-    setCartTickets(updatedCartTickets)
-  }
 
   return (
     <>
@@ -56,18 +45,18 @@ export default function ProductCart ({ product }) {
               <h1 className='font-normal text-[10px] text-[#B9C6C4]'>ID#{raffle.raffleId}</h1>
               <h1>{product.name}</h1>
               <p>{product.description}</p>
-              <div className='flex items-center text-[10px] font-normal'>
+              <div className='flex items-center text-[10px] font-normal my-2'>
                 <span className='font-normal'>Cantidad:</span>
-                <select className='w-12' name='quantity' id='quantity' onChange={handleQuantitySelectedChange}>
-                  <option value={product.quantity}>{product.quantity}</option>
-                  <option value='1'>1</option>
-                  <option value='2'>2</option>
-                  <option value='3'>3</option>
-                </select>
+                <div>
+                  <SelectQuantity options={options} product={product} />
+                </div>
 
                 <span className='font-light text-[7px]'>({remainingTickets} disponibles)</span>
               </div>
-              <TimeRifa raffleDate={raffle.raffleAt} />
+
+              <div className="flex w-full items-center justify-center mt-2">
+                <TimeRifa raffleDate={raffle.raffleAt} />
+              </div>
 
             </div>
 
@@ -104,10 +93,22 @@ export default function ProductCart ({ product }) {
           </div>
 
         </div>
+
       </div>
+
     </>
   )
 }
 ProductCart.propTypes = {
   product: PropTypes.object
 }
+
+// < div className = "relative w-10" >
+//                 <select className='w-full h-full text-center absolute inset-0 cursor-pointer custom-select' name='quantity' id='quantity' onChange={handleQuantitySelectedChange}>
+//                   <option value={product.quantity}>{product.quantity}</option>
+//                   <option value='1'>1</option>
+//                   <option value='2'>2</option>
+//                   <option value='3'>3</option>
+//                 </select>
+//                 <span className="flex items-center justify-center absolute inset-0 w-4 border border-gray-300 rounded">{product.quantity}</span>
+//               </ >

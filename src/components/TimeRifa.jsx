@@ -23,14 +23,14 @@ export default function TimeRifa ({ raffleDate }) {
     <>
       {!isMoreThan99Days
         ? <div className="flex justify-end items-center font-medium text-[#0c7065]">
-          <p className='flex justify-center items-center h-5 w-4 rounded-[4.3px] bg-white text-quaternary border shadow-md'>{formattedDays.charAt(0)}</p>
-          <p className='flex justify-center items-center h-5 w-4 rounded-[4.3px] bg-white text-quaternary border shadow-md'>{formattedDays.charAt(1)}</p>:
-          <p className='flex justify-center items-center h-5 w-4 rounded-[4.3px] bg-white text-quaternary border shadow-md'>{formattedHours.charAt(0)}</p>
-          <p className='flex justify-center items-center h-5 w-4 rounded-[4.3px] bg-white text-quaternary border shadow-md'>{formattedHours.charAt(1)}</p>:
-          <p className='flex justify-center items-center h-5 w-4 rounded-[4.3px] bg-white text-2B726E border shadow-md'>{formattedMinutes.charAt(0)}</p>
-          <p className='flex justify-center items-center h-5 w-4 rounded-[4.3px] bg-white text-2B726E border shadow-md'>{formattedMinutes.charAt(1)}</p>
+          <p className='flex justify-center items-center h-5 w-4 rounded bg-white text-quaternary border shadow-md'>{formattedDays.charAt(0)}</p>
+          <p className='flex justify-center items-center h-5 w-4 rounded bg-white text-quaternary border shadow-md'>{formattedDays.charAt(1)}</p>:
+          <p className='flex justify-center items-center h-5 w-4 rounded bg-white text-quaternary border shadow-md'>{formattedHours.charAt(0)}</p>
+          <p className='flex justify-center items-center h-5 w-4 rounded bg-white text-quaternary border shadow-md'>{formattedHours.charAt(1)}</p>:
+          <p className='flex justify-center items-center h-5 w-4 rounded bg-white text-2B726E border shadow-md'>{formattedMinutes.charAt(0)}</p>
+          <p className='flex justify-center items-center h-5 w-4 rounded bg-white text-2B726E border shadow-md'>{formattedMinutes.charAt(1)}</p>
         </div>
-        : <div className="flex justify-end items-center text-[8px] text-[#0c7065]"><p className='flex justify-center items-center w-12 py-1 px-2 rounded-[4.3px] bg-white text-2B726E border shadow-md'>Pronto</p></div>
+        : <div className="flex justify-end items-center text-[8px] text-[#0c7065]"><p className='flex justify-center items-center w-12 py-1 px-2 rounded bg-white text-2B726E border shadow-md'>Pronto</p></div>
          }
     </>
   )

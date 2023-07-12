@@ -18,7 +18,7 @@ export const useProducts = () => {
 
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([])
-  const [cartTickets, setCartTickets] = useState([])
+  const [cart, setCart] = useState([])
   const [raffles, setRaffles] = useState([])
 
   useEffect(() => {
@@ -35,10 +35,10 @@ export const ProductsProvider = ({ children }) => {
   }
 
   const addTicketCart = (ticket) => {
-    const existingProduct = cartTickets.find((product) => product.productId === ticket.productId)
+    const existingProduct = cart.find((product) => product.productId === ticket.productId)
 
     if (existingProduct) {
-      const updatedCartTickets = cartTickets.map((product) => {
+      const updatedcart = cart.map((product) => {
         if (product.productId === ticket.productId) {
           return {
             ...product,
@@ -48,7 +48,7 @@ export const ProductsProvider = ({ children }) => {
         }
         return product
       })
-      setCartTickets(updatedCartTickets)
+      setCart(updatedcart)
       return
     }
 
@@ -57,12 +57,12 @@ export const ProductsProvider = ({ children }) => {
       quantity: 1,
       total: ticket.price
     }
-    setCartTickets([...cartTickets, newProduct])
+    setCart([...cart, newProduct])
   }
 
   const removeTicketFromCart = (productId) => {
-    const updatedCartTickets = cartTickets.filter((ticket) => ticket.productId !== productId)
-    setCartTickets(updatedCartTickets)
+    const updatedcart = cart.filter((ticket) => ticket.productId !== productId)
+    setCart(updatedcart)
   }
 
   const findRaffleByProductId = (productId) => {
@@ -76,14 +76,14 @@ export const ProductsProvider = ({ children }) => {
 
   // Función para obtener el número total de boletos en el carrito
   const getCartItemCount = () => {
-    const cartItemCount = cartTickets.reduce((total, ticket) => total + ticket.quantity, 0)
+    const cartItemCount = cart.reduce((total, ticket) => total + ticket.quantity, 0)
     return cartItemCount
   }
 
   return (
     <ProductsContext.Provider value={{
-      cartTickets,
-      setCartTickets,
+      cart,
+      setCart,
       addTicketCart,
       removeTicketFromCart,
       getCartItemCount,

@@ -53,7 +53,7 @@ export default function HomePage () {
             <img
                 className='h-[30px]'
                 src={iconYoutube}
-                alt="icono de buscar"
+                alt="iconYoutube"
             />
           </NavLink>
         </li>
@@ -62,7 +62,7 @@ export default function HomePage () {
             <img
                 className='h-[30px]'
                 src={iconInstagram}
-                alt="icono de buscar"
+                alt="iconInstagram"
             />
           </NavLink>
         </li>
@@ -71,7 +71,7 @@ export default function HomePage () {
             <img
                 className='h-[30px]'
                 src={iconTwitter}
-                alt="icono de buscar"
+                alt="iconTwitter"
             />
           </NavLink>
         </li>
@@ -80,7 +80,7 @@ export default function HomePage () {
             <img
                 className='h-[30px]'
                 src={iconFacebook}
-                alt="icono de buscar"
+                alt="iconFacebook"
             />
           </NavLink>
         </li>

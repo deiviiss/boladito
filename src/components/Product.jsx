@@ -17,8 +17,7 @@ export default function Product ({ product }) {
     <div className=" w-full bg-white p-[7px] text-[8px] flex flex-col justify-between border-2  overflow-hidden relative rounded-tl-2xl rounded-tr-none rounded-br-2xl shadow-md mx-auto">
 
       <div className=" w-full flex flex-col items-center absolute -left-16 bg-[#D7E34B] -rotate-45">
-        <p className=' text-sm font-bold'>${product.price}</p>
-        <p className='text-[10px'>Por boleto</p>
+        <h1 className=' text-sm font-bold'>${product.price}</h1>
       </div>
 
       <TimeRifa raffleDate={raffle.raffleAt} ></TimeRifa>
