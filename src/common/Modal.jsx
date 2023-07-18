@@ -1,70 +1,37 @@
-import { Dialog, Transition } from '@headlessui/react'
 import PropTypes from 'prop-types'
-import { Fragment, useRef } from 'react'
+import { useRef } from 'react'
+import iconBoleto from '../assets/icons/Boleto.svg'
 import ButtonClose from '../assets/icons/ButtonClose.svg'
 
-export default function Modal ({ open, setOpen, children, title }) {
+export default function Modal ({ isOpen, setIsOpen, children, title }) {
   const cancelButtonRef = useRef(null)
   return (
-    <Transition.Root show={open} as={Fragment}>
-      <Dialog
-          as="div"
-          className="fixed z-10 inset-0 overflow-y-auto"
-          initialFocus={cancelButtonRef}
-          onClose={setOpen}
-      >
-        <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-          <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-          >
-            <Dialog.Overlay className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-          </Transition.Child>
-          <span
-              className="hidden sm:inline-block sm:align-middle sm:h-screen"
-              aria-hidden="true"
-          >
-            &#8203;
-          </span>
-          <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-              enterTo="opacity-100 translate-y-0 sm:scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-          >
-            <div className="inline-block align-bottom  text-left shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full min-w-[250px] w-full">
-              <div className="bg-gray-50 px-4 py-3 sm:px-6 flex justify-between">
-                <h3 className="text-xl">{title}</h3>
+    <div className={`absolute top-0 left-0 bottom-0 right-0 z-50 flex flex-col justify-center items-center w-full h-[1500px] px-2 mx-auto bg-gray-500 bg-opacity-75 transition-opacity ${isOpen ? 'opacity-100' : 'opacity - 100'}`}>
 
-                <div className='absolute -right-3 -top-2 w-6 z-10 text-gray-400 cursor-pointer' ref={cancelButtonRef}>
-                  <img src={ButtonClose} alt='cerrar' onClick={() => setOpen(false)}
-                       />
-                </div>
-              </div>
-              <div className="bg-white  pt-3 pb-4 sm:p-1 sm:pb-4">
-                <div className="sm:flex sm:items-start justify-center">
-                  {children}
-                </div>
-              </div>
+      <div className="absolute top-16 shadow-xl transform transition-all bg-gray-50 rounded py-1 px-2 mx-2">
+        <div className="relative px-1 py-3 justify-between">
+          <div className="bg-[#A9064B] flex items-center w-full justify-between rounded-lg text-3xl text-white p-3">
+            <div className="flex items-center gap-2">
+              <img className="h-[30px]" src={iconBoleto} alt="icono del boleto" />
+              <h1>{title}</h1>
             </div>
-          </Transition.Child>
+          </div>
+          <div className="absolute -right-4 -top-3 w-6 z-10 text-gray-400 cursor-pointer" ref={cancelButtonRef}>
+            <img src={ButtonClose} alt="cerrar" onClick={() => setIsOpen(false)} />
+          </div>
         </div>
-      </Dialog>
-    </Transition.Root>
+        <div className="pt-3 pb-4">
+          {children}
+        </div>
+
+      </div>
+    </div>
   )
 }
 
 Modal.propTypes = {
-  open: PropTypes.bool,
-  setOpen: PropTypes.func,
+  isOpen: PropTypes.bool,
+  setIsOpen: PropTypes.func,
   children: PropTypes.node,
   title: PropTypes.string
 }

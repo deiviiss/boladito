@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import iconFacebook from '../assets/icons/Facebook.svg'
 import iconInstagram from '../assets/icons/Instagram.svg'
@@ -16,10 +17,6 @@ export default function HomePage () {
 
   return (
     <>
-      {/* <form className='flex justify-center items-center h-[42px] bg-secondary'>
-        <input type="search" name='' id='' className='min-w-[350px] h-[27px] rounded-lg' />
-      </form> */}
-
       <Carousel autoSlide={ true } autoSlideinterval={4000}>
         {[
           ...slides.map((slide) => (

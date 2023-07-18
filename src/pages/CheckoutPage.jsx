@@ -1,10 +1,10 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import iconShopping from '../assets/icons/CARRITO.svg'
 import ProductCart from '../components/ProductCart'
 import { useProducts } from '../context/productsContext'
 
 const CheckoutPage = () => {
-  const { cart, getCartItemCount } = useProducts()
+  const { cart, getCartItemCount, setConfirmedPurchase } = useProducts()
 
   const sumTotalToPay = () => {
     const sum = cart.reduce((accumulator, product) => {
@@ -13,6 +13,13 @@ const CheckoutPage = () => {
     }, 0)
 
     return sum
+  }
+
+  const navigate = useNavigate()
+
+  const handleClickNext = () => {
+    setConfirmedPurchase(true)
+    navigate('/select-tickets')
   }
 
   return (
@@ -50,9 +57,9 @@ const CheckoutPage = () => {
 
               <p className='text-lg font-bold'>Total: <span className='font-bold text-xl text-quaternary'>${sumTotalToPay()}.00</span></p>
 
-              <div className='bg-[#FF7300] flex items-center justify-center rounded-lg text-2xl text-white p-1 w-full'>
-                <button>Siguiente</button>
-              </div>
+              <button onClick={() => handleClickNext()} className='bg-[#FF7300] hover:bg-[#ff7300d4] flex items-center justify-center rounded-lg text-2xl text-white p-1 w-full'>
+                Siguiente
+              </button>
 
             </div>
             : <div className='flex flex-col justify-center items-center'>

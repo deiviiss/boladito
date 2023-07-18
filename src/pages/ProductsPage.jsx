@@ -5,10 +5,13 @@ import { useProducts } from '../context/productsContext'
 import ProductsListLayout from '../layout/ProductsListLayout'
 
 export const ProductsPage = () => {
-  const { products } = useProducts()
+  const { raffles } = useProducts()
   const { filterProducts } = useFilters()
 
+  const products = raffles.map(raffle => raffle.product)
+
   const filteredProducts = filterProducts(products)
+
   return (
     <>
       <Filters />

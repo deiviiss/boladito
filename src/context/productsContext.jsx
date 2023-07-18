@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types'
 import { useState, createContext, useContext, useEffect } from 'react'
-
-import { getProductsRequest } from '../services/api/productsRequest'
 import { getRafflesRequest } from '../services/api/rafflesRequest'
 
 const ProductsContext = createContext()
@@ -17,47 +15,49 @@ export const useProducts = () => {
 }
 
 export const ProductsProvider = ({ children }) => {
-  const [products, setProducts] = useState([])
-  const [cart, setCart] = useState([])
+  const initialCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
+  const [cart, setCart] = useState(initialCart)
   const [raffles, setRaffles] = useState([])
+  const [confirmedPurchase, setConfirmedPurchase] = useState(false)
 
   useEffect(() => {
     getInitData()
   }, [])
 
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
+
   // should be private
   const getInitData = async () => {
-    const products = await getProductsRequest()
     const raffles = await getRafflesRequest()
 
-    products && setProducts(products)
     raffles && setRaffles(raffles)
   }
 
-  const addTicketCart = (ticket) => {
-    const existingProduct = cart.find((product) => product.productId === ticket.productId)
+  const addToCart = product => {
+    // check if the product is already in the cart
+    const productInCartIndex = cart.findIndex(item => item.productId === product.productId)
 
-    if (existingProduct) {
-      const updatedcart = cart.map((product) => {
-        if (product.productId === ticket.productId) {
-          return {
-            ...product,
-            quantity: product.quantity + 1,
-            total: product.total + ticket.price
-          }
-        }
-        return product
-      })
-      setCart(updatedcart)
-      return
+    // product is already in the cart
+    if (productInCartIndex >= 0) {
+      const newCart = structuredClone(cart)
+      newCart[productInCartIndex].quantity += 1
+      newCart[productInCartIndex].total += newCart[productInCartIndex].price
+
+      return setCart(newCart)
     }
 
-    const newProduct = {
-      ...ticket,
-      quantity: 1,
-      total: ticket.price
-    }
-    setCart([...cart, newProduct])
+    // product is not already in the cart
+
+    setCart(prevState => ([
+      ...prevState,
+      {
+        ...product,
+        quantity: 1,
+        total: product.price
+      }
+    ]))
   }
 
   const removeTicketFromCart = (productId) => {
@@ -84,12 +84,13 @@ export const ProductsProvider = ({ children }) => {
     <ProductsContext.Provider value={{
       cart,
       setCart,
-      addTicketCart,
+      addToCart,
       removeTicketFromCart,
       getCartItemCount,
-      products,
       raffles,
-      findRaffleByProductId
+      findRaffleByProductId,
+      confirmedPurchase,
+      setConfirmedPurchase
     }}>
       {children}
     </ProductsContext.Provider>
