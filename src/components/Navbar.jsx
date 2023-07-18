@@ -11,7 +11,7 @@ export default function NavBar () {
   return (
     <nav className='flex flex-col bg-primary sticky top-0 z-50'>
 
-      <div className="flex justify-between h-[42px] p-2">
+      <div className="flex justify-between h-12 p-2">
         <NavLink to={'/'} className='w-[140px]'>
           <img src={ logoImage } alt="logo" className=''/>
         </NavLink>
