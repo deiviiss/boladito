@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import iconFacebook from '../assets/icons/Facebook.svg'
 import iconInstagram from '../assets/icons/Instagram.svg'
