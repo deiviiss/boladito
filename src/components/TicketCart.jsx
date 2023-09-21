@@ -9,7 +9,7 @@ import iconWhatsApp from '../assets/icons/WhatsApp.svg'
 import SelectQuantity from '../common/SelectQuantity'
 import { useProducts } from '../context/productsContext'
 
-export default function ProductCart ({ product }) {
+export default function TicketCart ({ product }) {
   const { findRaffleByProductId, removeTicketFromCart } = useProducts()
 
   const options = [
@@ -67,25 +67,25 @@ export default function ProductCart ({ product }) {
               <li>
                 <Link to={'/checkout'}>
                   <img
-                      className='h-4'
-                      src={iconMessenger} alt='icono de messenger' />
+                    className='h-4'
+                    src={iconMessenger} alt='icono de messenger' />
                 </Link>
               </li>
               <li>
                 <Link to='/checkout'>
                   <img
-                      className='h-4'
-                      src={iconWhatsApp}
-                      alt='icono de whatsapp'
+                    className='h-4'
+                    src={iconWhatsApp}
+                    alt='icono de whatsapp'
                   />
                 </Link>
               </li>
               <li>
                 <Link to='/checkout'>
                   <img
-                      className='h-4'
-                      src={iconTelegram}
-                      alt='icono de telegram'
+                    className='h-4'
+                    src={iconTelegram}
+                    alt='icono de telegram'
                   />
                 </Link>
               </li>
@@ -99,16 +99,7 @@ export default function ProductCart ({ product }) {
     </>
   )
 }
-ProductCart.propTypes = {
+
+TicketCart.propTypes = {
   product: PropTypes.object
 }
-
-// < div className = "relative w-10" >
-//                 <select className='w-full h-full text-center absolute inset-0 cursor-pointer custom-select' name='quantity' id='quantity' onChange={handleQuantitySelectedChange}>
-//                   <option value={product.quantity}>{product.quantity}</option>
-//                   <option value='1'>1</option>
-//                   <option value='2'>2</option>
-//                   <option value='3'>3</option>
-//                 </select>
-//                 <span className="flex items-center justify-center absolute inset-0 w-4 border border-gray-300 rounded">{product.quantity}</span>
-//               </ >

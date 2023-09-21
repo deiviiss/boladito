@@ -94,4 +94,337 @@ const getRaffleByProductIdRequest = async (productId) => {
   return raffle
 }
 
-export { getRafflesRequest, getRaffleByProductIdRequest }
+const getTicketsByRaffleIdRequest = (raffleId) => {
+
+  let tickets = []
+
+  if (raffleId === 872312678 || raffleId === 872312681) {
+    tickets = [
+      {
+        "ticket_id": 1,
+        "raffle_id": 872312679,
+        "number": 801,
+        "status": "disponible",
+        "user_id": null
+      },
+      {
+        "ticket_id": 2,
+        "raffle_id": 872312679,
+        "number": 802,
+        "status": "disponible",
+        "user_id": null
+      },
+      {
+        "ticket_id": 3,
+        "raffle_id": 872312679,
+        "number": 803,
+        "status": "disponible",
+        "user_id": null
+      },
+      {
+        "ticket_id": 4,
+        "raffle_id": 872312679,
+        "number": 804,
+        "status": "vendido",
+        "user_id": 1
+      },
+      {
+        "ticket_id": 5,
+        "raffle_id": 872312679,
+        "number": 805,
+        "status": "vendido",
+        "user_id": 1
+      },
+      {
+        "ticket_id": 6,
+        "raffle_id": 872312679,
+        "number": 806,
+        "status": "disponible",
+        "user_id": null
+      },
+      {
+        "ticket_id": 7,
+        "raffle_id": 872312679,
+        "number": 807,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 8,
+        "raffle_id": 872312679,
+        "number": 808,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 9,
+        "raffle_id": 872312679,
+        "number": 809,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 10,
+        "raffle_id": 872312679,
+        "number": 810,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 11,
+        "raffle_id": 872312679,
+        "number": 811,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 12,
+        "raffle_id": 872312679,
+        "number": 812,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 13,
+        "raffle_id": 872312679,
+        "number": 813,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 14,
+        "raffle_id": 872312679,
+        "number": 814,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 15,
+        "raffle_id": 872312679,
+        "number": 815,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 16,
+        "raffle_id": 872312679,
+        "number": 816,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 17,
+        "raffle_id": 872312679,
+        "number": 817,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 18,
+        "raffle_id": 872312679,
+        "number": 818,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 19,
+        "raffle_id": 872312679,
+        "number": 819,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 20,
+        "raffle_id": 872312679,
+        "number": 820,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 21,
+        "raffle_id": 872312679,
+        "number": 821,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 22,
+        "raffle_id": 872312679,
+        "number": 822,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 23,
+        "raffle_id": 872312679,
+        "number": 823,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 24,
+        "raffle_id": 872312679,
+        "number": 824,
+        "status": "disponible",
+        "user_id": null
+      },
+      {
+        "ticket_id": 25,
+        "raffle_id": 872312679,
+        "number": 825,
+        "status": "disponible",
+        "user_id": null
+      }
+    ]
+  }
+
+  if (raffleId === 872312679 || raffleId === 872312680) {
+    tickets = [
+      {
+        "ticket_id": 1,
+        "raffle_id": 872312679,
+        "number": 701,
+        "status": "disponible",
+        "user_id": null
+      },
+      {
+        "ticket_id": 2,
+        "raffle_id": 872312679,
+        "number": 702,
+        "status": "disponible",
+        "user_id": null
+      },
+      {
+        "ticket_id": 3,
+        "raffle_id": 872312679,
+        "number": 703,
+        "status": "disponible",
+        "user_id": null
+      },
+      {
+        "ticket_id": 4,
+        "raffle_id": 872312679,
+        "number": 704,
+        "status": "vendido",
+        "user_id": 1
+      },
+      {
+        "ticket_id": 5,
+        "raffle_id": 872312679,
+        "number": 705,
+        "status": "vendido",
+        "user_id": 1
+      },
+      {
+        "ticket_id": 6,
+        "raffle_id": 872312679,
+        "number": 706,
+        "status": "disponible",
+        "user_id": null
+      },
+      {
+        "ticket_id": 7,
+        "raffle_id": 872312679,
+        "number": 707,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 8,
+        "raffle_id": 872312679,
+        "number": 708,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 9,
+        "raffle_id": 872312679,
+        "number": 709,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 10,
+        "raffle_id": 872312679,
+        "number": 810,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 11,
+        "raffle_id": 872312679,
+        "number": 711,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 12,
+        "raffle_id": 872312679,
+        "number": 712,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 13,
+        "raffle_id": 872312679,
+        "number": 713,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 14,
+        "raffle_id": 872312679,
+        "number": 714,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 15,
+        "raffle_id": 872312679,
+        "number": 715,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 16,
+        "raffle_id": 872312679,
+        "number": 716,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 17,
+        "raffle_id": 872312679,
+        "number": 717,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 18,
+        "raffle_id": 872312679,
+        "number": 718,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 19,
+        "raffle_id": 872312679,
+        "number": 719,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 20,
+        "raffle_id": 872312679,
+        "number": 720,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 21,
+        "raffle_id": 872312679,
+        "number": 721,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 22,
+        "raffle_id": 872312679,
+        "number": 722,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 23,
+        "raffle_id": 872312679,
+        "number": 723,
+        "status": "disponible",
+        "user_id": null
+      }, {
+        "ticket_id": 24,
+        "raffle_id": 872312679,
+        "number": 724,
+        "status": "disponible",
+        "user_id": null
+      },
+      {
+        "ticket_id": 25,
+        "raffle_id": 872312679,
+        "number": 725,
+        "status": "disponible",
+        "user_id": null
+      }
+    ]
+  }
+
+  return tickets
+}
+
+export { getRafflesRequest, getRaffleByProductIdRequest, getTicketsByRaffleIdRequest }

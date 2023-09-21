@@ -25,9 +25,9 @@ export default function Product ({ product }) {
         </div>
 
         <div className="flex justify-between items-center gap-1">
-          <div className="">
-            <h1>{product.name}</h1>
-            <p>{product.description}</p>
+          <div className='w-[70ch]'>
+            <h1 className='font-semibold text-[10px]'>{product.name}</h1>
+            <p className=' text-[8px]'>{product.description}</p>
           </div>
 
           <ButtonAddTicket product={product} />

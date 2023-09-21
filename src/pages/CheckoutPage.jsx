@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import iconShopping from '../assets/icons/CARRITO.svg'
-import ProductCart from '../components/ProductCart'
+import TicketCart from '../components/TicketCart'
 import { useProducts } from '../context/productsContext'
 
 const CheckoutPage = () => {
@@ -31,9 +31,9 @@ const CheckoutPage = () => {
             ? <div className='bg-[#FF7300] flex items-center justify-between rounded-lg text-3xl text-white p-3'>
               <div className='flex items-center gap-1'>
                 <img
-                    className='h-[30px]'
-                    src={iconShopping}
-                    alt="icono de carrito"
+                  className='h-[30px]'
+                  src={iconShopping}
+                  alt="icono de carrito"
                 />
                 <h1>Carrito</h1>
               </div>
@@ -42,7 +42,7 @@ const CheckoutPage = () => {
         }
 
         {
-          cart.map((product) => <ProductCart key={product.productId} product={product} />)
+          cart.map((product) => <TicketCart key={product.productId} product={product} />)
         }
         {
           cart.length > 0

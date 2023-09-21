@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { useState, createContext, useContext, useEffect } from 'react'
-import { getRafflesRequest } from '../services/api/rafflesRequest'
+import { getRafflesRequest, getTicketsByRaffleIdRequest } from '../services/api/rafflesRequest'
 
 const ProductsContext = createContext()
 
@@ -34,7 +34,6 @@ export const ProductsProvider = ({ children }) => {
 
     raffles && setRaffles(raffles)
   }
-
   const addToCart = product => {
     // check if the product is already in the cart
     const productInCartIndex = cart.findIndex(item => item.productId === product.productId)
@@ -74,6 +73,12 @@ export const ProductsProvider = ({ children }) => {
     return null // Si no se encuentra la rifa, se puede manejar el caso según la lógica
   }
 
+  const getTicketsByRaffleId = (raffleId) => {
+    const tickets = getTicketsByRaffleIdRequest(raffleId)
+
+    return tickets
+  }
+
   // Función para obtener el número total de boletos en el carrito
   const getCartItemCount = () => {
     const cartItemCount = cart.reduce((total, ticket) => total + ticket.quantity, 0)
@@ -88,6 +93,7 @@ export const ProductsProvider = ({ children }) => {
       removeTicketFromCart,
       getCartItemCount,
       raffles,
+      getTicketsByRaffleId,
       findRaffleByProductId,
       confirmedPurchase,
       setConfirmedPurchase
